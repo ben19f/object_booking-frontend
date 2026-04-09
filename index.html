@@ -10,12 +10,13 @@
 
     <pre id="result"></pre>
 
-    <script>
-        async function checkHealth() {
-            const res = await fetch('/health');
-            const data = await res.json();
-            document.getElementById('result').textContent = JSON.stringify(data, null, 2);
-        }
-    </script>
+   <script>
+    async function checkHealth() {
+        const res = await fetch('http://localhost:8000/health');
+        const data = await res.json();
+        document.getElementById('result').textContent =
+            JSON.stringify(data, null, 2);
+    }
+</script>
 </body>
 </html>

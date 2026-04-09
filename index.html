@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MVP</title>
+</head>
+<body>
+    <h1>Hello, this is MVP 🚀</h1>
+
+    <button onclick="checkHealth()">Check backend</button>
+
+    <pre id="result"></pre>
+
+    <script>
+        async function checkHealth() {
+            const res = await fetch('/health');
+            const data = await res.json();
+            document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
